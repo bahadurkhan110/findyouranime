@@ -33,3 +33,27 @@ The `anime_data` and `rating_data` dataframes are merged on the `anime_id` to cr
 ```python
 anime_fulldata = pd.merge(anime_data, rating_data, on='anime_id', suffixes=['', '_user'])
 anime_fulldata = anime_fulldata.rename(columns={'name': 'anime_title', 'rating_user': 'user_rating'})
+```
+
+### Cleaning Data
+A text cleaning function is applied to the anime_title column to remove unwanted characters and HTML entities.
+```python
+import re
+
+def text_cleaning(text):
+    text = re.sub(r'&quot;', '', text)
+    text = re.sub(r'.hack//', '', text)
+    text = re.sub(r'&#039;', '', text)
+    text = re.sub(r'A&#039;s', '', text)
+    text = re.sub(r'I&#039;', 'I\'', text)
+    text = re.sub(r'&amp;', 'and', text)
+    return text
+
+anime_data['name'] = anime_data['name'].apply(text_cleaning)
+```
+
+## Exploratory Data Analysis (EDA)
+###Top 10 Anime Based on Rating Counts:
+![top 10 animes based on ratings](results/top_10_animes.png)
+
+
