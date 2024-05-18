@@ -56,8 +56,14 @@ anime_data['name'] = anime_data['name'].apply(text_cleaning)
 ### Top 10 Anime Based on Rating Counts:
 ![top 10 animes based on ratings](results/top_10_animes.png)
 
+This graph shows top 10 animes based on the total rating points it has earned. We see some of the famous anime titles like Death Note, Naruto and Fullmetal.
+
+
 ### Top 10 Anime Based on Community Size:
 ![top 10 animes based on community](results/anime_community_size.png)
+
+Yet again the community size of death note is largest and is followed by other famous anime like attack on titan and fullmetal and naruto.
+
 
 
 
