@@ -53,7 +53,7 @@ anime_data['name'] = anime_data['name'].apply(text_cleaning)
 ```
 
 ## Exploratory Data Analysis (EDA)
-###Top 10 Anime Based on Rating Counts:
+### Top 10 Anime Based on Rating Counts:
 ![top 10 animes based on ratings](results/top_10_animes.png)
 
 
